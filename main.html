@@ -25,13 +25,78 @@
 
 
     <div id="app">
+        <div style="display: flex">
+            <div style="flex: 7">
+                <b style="font-size: 200%">Snow Incremental</b><br>
+                Continuation from Rain Incremental from Scratch<br>
+                Press your arrow keys / left & right buttons to move your character
+            </div>
+            <button style="flex: 1">Story</button>
+        </div>
 
-        
-        {{player}}
-        {{funcs.goo()}}
+        <div style="display: flex">
+            <div style="flex: 1;">
+                <canvas id="main" width="500" height="500" style="width: 100%;z-index: 0; outline-style: solid; outline-width: 2px;">
+                </canvas>
+                <div style="display: flex">
+                    <button style="flex: 1" onclick="funcs.move_left(10)">&larr;</button>
+                    <button style="flex: 1" onclick="funcs.move_right(10)">&rarr;</button>
+                </div>
+            </div>
+            <div style="flex: 1; text-align: center;">
+                <div style="display: flex">
+                    <div style="flex: 1">
+                        <span style="font-size: 150%">{{format(player.energy)}}</span><br>Energy<br><small>({{funcs.energy_gain()}}/s)</small>
+                    </div>
 
-        <!--How to use: You uhhhh put stuff here it's that simple-->
-        <!--All the formatting, and the saving stuff has been done-->
-        <!--You can't get anything wrong with this system-->
+                    <div style="flex: 1">
+                        <span style="font-size: 150%">{{format(player.temp)}}</span><br>&deg;C
+                    </div>
+
+                    <div style="flex: 1">
+                        <span style="font-size: 150%">0 cm</span><br>Snow
+                    </div>
+                </div>
+                <hr>
+                <div id="shop" v-if="player.tab=='shop'">
+                    <i>Welcome to my shop! I wonder what those items are for.</i><br>
+                    <span id="gens" v-html="funcs.gens()"></span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="story_box" hidden>
+            <span style="font-size: 150%;">Preface</span>
+            <hr>
+            Since the dusk of life, I've always been a challenger of nature. I have broke through how far I can push myself
+            against the force of nature many and many times, from attempting to climb the highest mountains to going to the
+            driest place and see how long I can survive.<br>
+            But one thing captures me during the expeditions - Snow.<br>
+            Powdery, yet solid and common. Something that seems right ripped off from a delicate chemistry experiment, but from what it seems like,
+            nature can provide the same.<br>
+            And now I look for more. More power to alter the nature, to experience what a bigger challenge may be.<br><br>
+            And one day, seems like the godness had grant me the potential to do so.<br>
+            Faith that fills my heart with a container of power, currently devoid of what I wish.<br>
+            And the main objective of my curious and adventurous life - is to see nature at its fullest.<br>
+            Time to gather what we need.
+        </div>
+        <div class="story_box" hidden>
+            <span style="font-size: 150%;">01</span>
+            <hr>
+            The power grows. Slowly but steadily, I can start feeling the nature turning around me as time goes.<br>
+            The air gets colder,<br>
+            The wind gets louder,<br>
+            and the sun seems to be darker, at least in my own eyes.<br><br>
+            Is it just my psychological effects of gather power, or the objective truth of what's happening?
+        </div>
+        <div class="story_box" hidden>
+            <span style="font-size: 150%;">02</span>
+            <hr>
+            I see the world getting more blue as power is gathered.<br>
+            Gradually, the gloomy clouds cover the land. The land gets darker without sunshine. Feels like the kind of
+            weather where a bossfight happens in a moment.<br><br>
+            I can see people more and more bewildered as my journey continues, but that's out of my scope for my dreams.
+        </div>
     </div>
 </html>

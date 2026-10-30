@@ -1,19 +1,27 @@
 function initPlayer() {
     return {
-        version: "1.0.0"
+        version: "1.0.0",
+        snow: new Decimal(0),
+        energy: new Decimal(0),
+        temp: new Decimal(30),
+        player_x_pos: 0,
+
+        generators: [new Decimal(1), new Decimal(0), new Decimal(0), new Decimal(0), new Decimal(0), new Decimal(0), new Decimal(0), new Decimal(0)],
+
+        tab: "none"
     }
 }
 
-NAME = "67" //place you want to direct your local storage thing
+NAME = "snow-incremental" //place you want to direct your local storage thing
 //change this to sth else to enable saving!!!
 
 
 
 player = initPlayer()
 
-const player_vars_d = []
-const player_vars_l = []
-const player_vars_str = []
+const player_vars_d = ["snow","energy","temp"]
+const player_vars_l = ["generators"]
+const player_vars_str = ["player_x_pos"]
 
 function detectNaN() {
     for (var i in player_vars_d) {

@@ -30,6 +30,9 @@ function update_canvas() {
     ctx.fillStyle = "#ffffff"
     ctx.fillText("Upgrades", 100, 355)
 
+    ctx.font = "10px monospace"
+    ctx.fillText("(not implemented)", 100, 365)
+
     //clouds
 
     //player

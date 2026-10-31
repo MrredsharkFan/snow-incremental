@@ -39,8 +39,10 @@ function update_canvas() {
     ctx.fillStyle = "#ffffee"
     ctx.fillRect(-2 + player.player_x_pos, 429, 14, 14)
     ctx.fillRect(player.player_x_pos, 445, 10, 28)
-
-    if (player.player_x_pos > 340 && player.player_x_pos < 470) {
+    if (player.player_x_pos > 95 && player.player_x_pos < 165) {
+        player.tab = "upg"
+    }
+    else if (player.player_x_pos > 340 && player.player_x_pos < 470) {
         player.tab = "shop"
     }
     else {

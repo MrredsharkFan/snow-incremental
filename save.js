@@ -7,6 +7,7 @@ function initPlayer() {
         player_x_pos: 0,
 
         generators: [new Decimal(1), new Decimal(0), new Decimal(0), new Decimal(0), new Decimal(0), new Decimal(0), new Decimal(0), new Decimal(0)],
+        upgrades: [],
 
         tab: "none"
     }
@@ -21,7 +22,7 @@ player = initPlayer()
 
 const player_vars_d = ["snow","energy","temp"]
 const player_vars_l = ["generators"]
-const player_vars_str = ["player_x_pos"]
+const player_vars_str = ["player_x_pos","upgrades"]
 
 function detectNaN() {
     for (var i in player_vars_d) {

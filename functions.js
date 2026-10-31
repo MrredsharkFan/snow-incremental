@@ -58,6 +58,7 @@ const funcs = {
         for (i in player.generators) {
             L = L.add(player.generators[i].times(gen_data[i][1]))
         }
+        if (has_upgrade(0)){L = L.times(4)}
         return L
     },
 
@@ -71,5 +72,19 @@ const funcs = {
                 </button>`
             }
         return S
-}
+    },
+
+    upgs: function () {
+        S = ""
+        for (i = 0; i < upg_data.length; i++) {
+            S = S + `<button class=${has_upgrade(i) ? 'bought' : 'unbought'} onclick="buy_upg(Number(${i}))">
+            ${upg_data[i].title}<br>
+            <small>
+            ${upg_data[i].effect_disp}<br>
+                Cost: ${format(upg_data[i].cost)} energy<br>
+            </small>    
+            </button>`
+        }
+        return S
+    }
 }

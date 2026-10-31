@@ -27,3 +27,10 @@ big {
     min-width: 40%;
     font-size: 75%;
 }
+
+.bought {
+    background-color: #88ff88;
+}
+.unbought {
+    background-color: #ff8888
+}
